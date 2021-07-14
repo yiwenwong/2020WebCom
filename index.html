@@ -1,0 +1,340 @@
+
+ <!doctype html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>他们的故事，我们的故事</title>
+      
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+  
+      <style>
+       
+       
+        
+  
+   
+   * {
+     margin: 0;
+     padding: 0;
+   }
+  
+   
+  
+   body section.slideshow {
+     position: absolute;
+     display: block;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     background-image: linear-gradient(to bottom right,black, white);
+   }
+   body section.slideshow .content {
+     background-color: transparent;
+  
+     position: absolute;
+     display: block;
+     width: 50%;
+     height: 50%;
+     overflow: hidden;
+     background-repeat: no-repeat;
+     background-position: top;
+     background-position: center center;     
+     background-size: cover;
+     z-index: 6;
+   }
+   body section.slideshow .content:before {
+     content: "";
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     background: inherit;    
+     filter: gray;
+     filter: grayscale(100%);
+     z-index: 1;
+   }
+   body section.slideshow .content .inner {
+     position: relative;
+     display: block;
+     width: 100%;
+     width: calc(100% - 32px);
+     max-width: 520px;
+     height: auto;
+     margin: 0 auto;
+     padding: 64px 0;
+     opacity: 0;
+     visibility: hidden;
+     text-align: center;
+     color: #b38a58;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 2;
+   }
+   body section.slideshow .content .inner h2 {
+     font-family: 'Roboto Condensed', sans-serif;
+       color: #fff;
+   }
+   body section.slideshow .content .inner p {
+     padding: 8px 0;
+       font-family: 'Roboto Condensed', sans-serif;
+       
+       
+   }
+    
+   body section.slideshow .content .inner a {
+       font-family: 'Roboto Condensed', sans-serif;
+     position: relative;
+     display: inline-block;
+     margin-top: 16px;
+     background: #fff;
+     border: 1px solid #b38a58;
+     padding: 12px 20px;
+     font-size: 17px;
+     color: #b38a58;
+     box-shadow: 4px 4px 0px 0px #b38a58;
+     font-weight: 700;
+     letter-spacing: 5px;
+     text-transform: uppercase;
+     text-decoration: none;
+     transition: all 0.05s ease-in-out;
+     left: 0;
+     top: 0;
+     outline: 0px none;
+     outline: 0px;
+   }
+  
+   body section.slideshow .content .inner a:hover {
+     left: 4px;
+     top: 4px;
+     box-shadow: 0 0 0 0 #b38a58;
+   }
+   body section.slideshow .content.main-content {
+     top: 0;
+     left: 0;
+   }
+   body section.slideshow .content.main-content .inner {
+     opacity: 1;
+     visibility: visible;
+   }
+   body section.slideshow .content.main-content-1 {
+     top: 0;
+     left: 50%;
+   }
+   body section.slideshow .content.main-content-2 {
+     top: 50%;
+     left: 50%;
+   }
+   body section.slideshow .content.main-content-3 {
+     top: 50%;
+     left: 0;
+   }
+   body section.slideshow .background {
+     position: absolute;
+     display: block;
+     width: 200%;
+     height: 200%;
+     overflow: hidden;
+     top: -150%;
+     left: -150%;
+   }
+   body section.slideshow .background.main-background {
+     background-color: #0d1f22;
+     z-index: 4;
+   }
+   body section.slideshow .background.main-background-1 {
+     background-color: #264027;
+     z-index: 3;
+   }
+   body section.slideshow .background.main-background-2 {
+     background-color: #3c5233;
+     z-index: 2;
+   }
+   body section.slideshow .background.main-background-3 {
+     background-color: #6f732f;
+     z-index: 1;
+   }
+   body section.slideshow ul.navigation {
+     background-color: orange;
+     position: relative;
+     display: inline-block;
+     width: 164px;
+     height: 164px;
+     top: 50%;
+     left: 50%;
+     float: none;
+     text-align: center;
+     overflow: hidden;
+     border-radius: 50%;
+     overflow: hidden;
+     transform: translate(-50%, -50%);
+     z-index: 10;
+     border: 3px solid #fff;
+     box-shadow: 4px 4px 0px 0px #b38a58;
+     transition: all 0.05s ease-in-out;
+   }
+   
+   body section.slideshow ul.navigation li {
+     font-family: 'Roboto Condensed', sans-serif;
+     color: #fff;
+     position: absolute;
+     display: block;
+     width: 83px;
+     height: 83px;
+     font-size: 22px;
+     font-weight: 400;
+     cursor: pointer;
+   }
+  
+   body section.slideshow ul.navigation li span {
+     position: absolute;
+     display: block;
+   }
+   body section.slideshow ul.navigation li:nth-child(1) {
+     width: 82px;     
+     left: 0;
+     border-right: 3px solid #fff;
+   }
+  
+   body section.slideshow ul.navigation li:nth-child(1) span {
+     bottom: 5px;
+     right: 10px;
+   }
+  
+   body section.slideshow ul.navigation li:nth-child(2) {
+     height: 82px;
+     top: 0;
+     left: 50%;
+     border-bottom: 3px solid #fff;
+   }
+  
+   body section.slideshow ul.navigation li:nth-child(2) span {
+     bottom: 5px;
+     left: 10px;
+      
+   }
+    
+   body section.slideshow ul.navigation li:nth-child(3) {
+     width: 82px;
+     top: 50%;
+     left: 50%;
+     border-left: 3px solid #fff;
+   }
+   
+   body section.slideshow ul.navigation li:nth-child(3) span {
+     top: 7px;
+     left: 6px;
+   }
+   
+   body section.slideshow ul.navigation li:nth-child(4) {
+     height: 82px;
+     top: 50%;
+     left: 0;
+     border-top: 3px solid #fff;
+   }
+   
+   body section.slideshow ul.navigation li:nth-child(4) span {
+     top: 5px;
+     right: 9px;
+   }
+   
+   body section.slideshow ul.navigation:hover {
+     box-shadow: 0px 0px 0px 0px #b38a58;
+   }
+       
+       </style>
+   </head>
+   <body>
+     
+     <section class="slideshow">
+       
+       <!-- slideshow:content START -->
+       <div class="content main-content" data-id="content-1">
+         <div class="inner">
+           <h2>2020发生了哪些事？</h2>
+           <div class="description">
+             <p> ——不平凡的二零二零</p>
+             <a href="summary.html">详情</a>
+           </div>
+         </div>
+       </div>
+       
+       <div class="content main-content-1" data-id="content-2">
+         <div class="inner">
+           <h2>疫情始末</h2>
+           <div class="description">
+             <p>--中国功不可没</p>
+             <a href="progress.html">详情</a>
+           </div>
+         </div>
+       </div>
+       
+       <div class="content main-content-2" data-id="content-3">
+         <div class="inner">
+           <h2>英雄人物</h2>
+           <div class="description">
+             <p>--你们不该被遗忘</p>
+             <a href="shicha.html">详情</a>
+           </div>
+         </div>
+       </div>
+       
+       <div class="content main-content-3" data-id="content-4">
+         <div class="inner">
+           <h2>我的2020 </h2>
+           <div class="description">
+             <p>--这一年里我做了啥</p>
+             <a href="ourstory.html">详情</a>
+           </div>
+         </div>
+       </div>
+       <!-- slideshow:content END -->
+       
+       <!-- slideshow:rotating-backgrounds END -->
+       <div class="background main-background"></div>
+       <div class="background main-background-1"></div>
+       <div class="background main-background-2"></div>
+       <div class="background main-background-3"></div>
+       <!-- slideshow:rotating-backgrounds END -->
+       
+       <!-- slideshow:navigation START -->
+       <ul class="navigation">
+         <li 
+           data-id="1" 
+           data-rotation="0" 
+           data-bcg=" ">
+           <span>ONE</span>
+         </li>
+         <li 
+           data-id="2" 
+           data-rotation="90" 
+           data-bcg="">
+           <span>TWO</span>
+         </li>
+         <li 
+           data-id="3" 
+           data-rotation="180" 
+           data-bcg="assets/img/ ">
+           <span>THREE</span>
+         </li>
+         <li 
+           data-id="4" 
+           data-rotation="270" 
+           data-bcg="assets/img/ ">
+           <span>FOUR</span>
+         </li>
+       </ul>
+        
+       
+     </section>
+      
+ 
+     <script src="https://www.5g-o.com/codedesign/wp-content/uploads/2020/04/google-jquery-2.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+     <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
+     <script src="https://www.5g-o.com/codedesign/wp-content/uploads/2020/10/demo-1.js"></script>
+ 
+   </body>
+ </html>

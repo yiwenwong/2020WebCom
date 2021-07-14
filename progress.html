@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>疫情始末</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style>     
+body {
+	margin:0;
+	font-family: 'Roboto Condensed', sans-serif;
+                font-size: 70px;
+                background: url(pic/111.jpg);
+}
+
+ 
+h1 {
+	 	  
+	color:#333;
+	font-weight:700;
+	margin-top:125px;	 
+	text-align:center;
+	text-transform:uppercase;
+	letter-spacing:4px;
+	line-height:23px;
+}
+
+/* --- Start progress bar --- */
+
+.process-wrapper {
+	margin:auto;
+	max-width:1080px;
+}
+
+#progress-bar-container {
+	position:relative;
+	width:90%;
+	margin:auto;
+	height:100px;
+	margin-top:65px;
+}
+
+#progress-bar-container ul {
+	padding:0;
+	margin:0;
+	padding-top:15px;
+	z-index:9999;
+	position:absolute;
+	width:100%;
+	margin-top:-40px
+}
+
+#progress-bar-container li:before {
+	content:" ";
+	display:block;
+	margin:auto;
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:solid 2px #aaa;
+	transition:all ease 0.3s;
+     
+}
+
+#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+	border:solid 2px #fff;
+       	 
+	background: linear-gradient(to right, #E91E63 0%,#fff 100%); 
+}
+
+#progress-bar-container li {
+	list-style:none;
+	float:left;
+	width:20%;
+	text-align:center;
+	color:#aaa;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	font-weight:700;
+	transition:all ease 0.2s;
+	vertical-align:bottom;
+	height:60px;
+	position:relative;
+}
+
+#progress-bar-container li .step-inner {
+	position:absolute;
+	width:100%;
+	bottom:0;
+    font-size: 14px;
+}
+
+#progress-bar-container li.active, #progress-bar-container li:hover {
+	color:#444;
+}
+
+#progress-bar-container li:after {
+	content:" ";
+	display:block;
+	width:6px;
+	height:6px;
+	background:#777;
+	margin:auto;
+	border:solid 7px #fff;
+	border-radius:50%;
+	margin-top:40px;
+	box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+	transition:all ease 0.2s;
+     
+}
+
+#progress-bar-container li:hover:after {
+	background:#555;
+}
+
+#progress-bar-container li.active:after {
+	background:#207893;
+}
+
+#progress-bar-container #line {
+	width:80%;
+	margin:auto;
+	background: #eee;
+	height:6px;
+	position:absolute;
+	left:10%;
+	top:57px;
+	z-index:1;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-bar-container #line-progress {
+	content:" ";
+	width:3%;
+	height:100%;
+	background: #207893;	 
+	background: linear-gradient(to right, #207893 0%,#2ea3b7 100%); 
+	position:absolute;
+	z-index:2;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-content-section {
+	width:90%;
+	margin: auto;
+	background: #f3f3f3;
+	border-radius: 4px;
+}
+
+#progress-content-section .section-content {
+	padding:30px 40px;
+	text-align:center;
+}
+
+#progress-content-section .section-content h2 {
+	font-size:17px;
+	text-transform:uppercase;
+	color:#333;
+	letter-spacing:1px;
+}
+
+#progress-content-section .section-content p {
+	font-size:16px;
+	line-height:1.8em;
+	color:#777;
+}
+
+#progress-content-section .section-content {
+	display:none;
+	animation: FadeInUp 700ms ease 1;
+	animation-fill-mode:forwards;
+	transform:translateY(15px);
+	opacity:0;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+ 
+    </style>
+</head>
+<body>
+	<input type="button" class="btn"  value="返回上一页" onclick="javascript:history.go(-1);"/>
+
+
+<h1>抗击疫情，众志成城</h1>
+<br> 
+<div class="process-wrapper">
+<div id="progress-bar-container">
+	<ul>
+		<li class="step step01 active"><div class="step-inner">全城戒备</div></li>
+		<li class="step step02"><div class="step-inner">众志成城</div></li>
+		<li class="step step03"><div class="step-inner">不懈努力</div></li>
+		<li class="step step04"><div class="step-inner">持之以恒</div></li>
+		<li class="step step05"><div class="step-inner">胜率曙光</div></li>
+	</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>疫情前兆</h2>
+		<p>2019年12月8日，第一例新型冠状病毒肺炎患者被发现；2019年12月31日，疫情披露于世；1月20日，武汉成立市新型冠状病毒感染的肺炎疫情防控指挥部；1月21日，武汉实施进出武汉人员管控，遏制疫情扩散。</p>
+	</div>
+	
+	<div class="section-content strategy">
+		<h2>全城上下共同抗争</h2>
+		<p>在医护人员大力增援的同时，武汉市各地企业纷纷动员起来，停工休假的员工纷纷回到工作岗位，加班加点，加大生产。人福博赛生物是一家从事病毒性肺炎检测试剂生产的公司。这个春节，许多公司技术人员和工人都主动放弃休息，从生产、质控、销售等环节确保肺炎相关检测试剂货源充足，并以最快速度将肺炎检测试剂送抵用户手中。</p>
+	</div>
+	
+	<div class="section-content creative">
+		<h2>中国做出的贡献有目共睹</h2>
+		<p>2020年5月1日在日内瓦世卫组织总部举行的例行记者会上,对于武汉在院新冠患者日前清零,范凯尔克霍弗在回答新华社记者提问时说:“祝贺(武汉)取得这一成就。我们对此只有钦佩。”她表示,感谢武汉人民的“不懈努力”,不仅仅是医务工作者,还包括很长一段时期内遵守居家隔离措施的每个人。</p>
+	</div>
+	
+	<div class="section-content production">
+		<h2>疫情逐渐缓解毫不懈怠</h2>
+		<p>2月16日，武汉开展为期3天的拉网式大排查，坚决遏制疫情扩散蔓延。方法上，配齐工作力量，公安、社区、网络一体化推动，实现人工和科技手段相结合；标准上，坚持“不漏一户、不漏一人”；收治上，对发热病人、密切接触者和疑似患者及时进行核酸检测，提高排除率；组织上，各区党政一把手要亲自上阵，对落实不力的严肃追责问责。</p>
+	</div>
+	
+	<div class="section-content analysis">
+		<h2>抗击疫情迎来胜利曙光</h2>
+		<p>“基本遏制住了疫情”“联合国新闻”3月16日发布了一篇世卫组织驻华代表高登·加莱亚博士接受采访的报道。高登·加莱亚博士在报道中指出，中国新冠肺炎病例数呈下降趋势，表明中国新冠肺炎疫情形势已经发生了转变。他说：“中国的疫情在其正在发展的过程中被成功遏制，从我们得到的数据以及我们在整个中国社会中观察到的结果，都可以很清楚地证明这一点。”</p>
+	</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+
+	</script>
+	
+
+</body>
+</html>
